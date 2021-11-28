@@ -108,7 +108,7 @@
         <h2 class="center mt-3">participate</h2>
         <div class="container">
           <form action="/airdrop" method="post">
-            <div class="mb-3">
+            <div class=" input-group mb-3">
               <label for="email" class="form-label">Email address</label>
               <span class="input-group-text"><i class="far fa-envelope"></i></span>
               <input
@@ -120,7 +120,7 @@
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
+            <div class=" input-group mb-3">
               <label for="wallet" class="form-label">Wallet: </label>
               <span class="input-group-text"><i class="fas fa-wallet"></i></span>
               <input
@@ -131,7 +131,7 @@
                 placeholder="ETH Address"
               />
             </div>
-            <div class="mb-3">
+            <div class=" input-group mb-3 ">
               <label for="twitter" class="form-label">Twitter: </label>
               <span class="input-group-text"><i class="fab fa-twitter"></i></span>
               <input
@@ -142,7 +142,7 @@
                 placeholder="@JohnDoe"
               />
             </div>
-            <div class="mb-3">
+            <div class="input-group mb-3">
               <label for="telegram" class="form-label">Telegram: </label>
               <span class="input-group-text"><i class="fab fa-telegram-plane"></i></span>
               <input
@@ -172,33 +172,36 @@
       <div class="col-md-6">
         <h2 class="center mt-3">participants</h2>
         <div class="container">
-          <table class="table table-success table-striped">
-            <thead>
-              <tr>
-                <th class="p-3" scope="col">ETH Address</th>
-                <th class="p-3" scope="col">Referral</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
-                <td class="p-3">kiwano</td>
-              </tr>
-              <tr>
-                <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
-                <td class="p-3">kiwano</td>
-              </tr>
-              <tr>
-                <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
-                <td class="p-3">kiwano</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-success table-striped">
+              <thead>
+                <tr>
+                  <th class="p-3" scope="col">ETH Address</th>
+                  <th class="p-3" scope="col">Referral</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
+                  <td class="p-3">kiwano</td>
+                </tr>
+                <tr>
+                  <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
+                  <td class="p-3">kiwano</td>
+                </tr>
+                <tr>
+                  <td class="p-3">0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243</td>
+                  <td class="p-3">kiwano</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
         </div>
         <h2 class="center  pt-2 pb-2">details</h2>
         <div class="container">
           <form action="/airdrop" method="get">
-            <div class="mb-3">
+            <div class=" input-group mb-3">
               <label for="wallet" class="form-label">Wallet: </label>
               <span class="input-group-text"><i class="fas fa-wallet"></i></span>
               <input
