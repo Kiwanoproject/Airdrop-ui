@@ -10,7 +10,7 @@ const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 // DATABASE
 mongoose
-  .connect("mongodb://localhost/Kiwano")
+  .connect("mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority")
   .then(() => {
     console.log("Database connected");
   })
