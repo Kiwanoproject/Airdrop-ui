@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+p {
+  font-size: 15px;
+}
+div {
+  font-size: 15px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cardo", serif;
+  text-transform: uppercase;
+}
+h1 {
+  text-transform: capitalize;
+}
+h2 {
+  font-size: 15px;
+  color: #4948bb;
+  padding-bottom: 30px;
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+li {
+  list-style: none;
+}
+.color {
+  color: #babb01;
+  color: #babb48;
+}
+.btn-style {
+  color: white;
+  padding: 10px 20px;
+  background-color: #48bb83;
+  border-radius: 0;
+  border: none;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-family: "Cardo", serif;
+  border-radius: 5px;
+}
+.btn-style:hover,
+.btn-style:focus,
+.btn-style:active {
+  color: white;
+  background-color: #babb01;
+}
+.center {
+  text-align: center;
+}
+.input {
+  border-radius: 0;
+}
+.complimentary-color {
+  color: #babb01 !important;
+}
+
+/* NAVBAR */
+#navbar {
+  background-color: #4948bb;
+  font-family: "Cardo", serif;
+  padding: 20px;
+}
+a.nav-link {
+  color: white;
+  text-transform: capitalize;
+}
+.navbar-toggler span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  background: #ccc;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler:hover span,
+.navbar-toggler:focus span {
+  background: #ccc;
+}
+.navbar-toggler[aria-expanded="true"] span:first-of-type {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.navbar-toggler[aria-expanded="true"] span:nth-of-type(2) {
+  opacity: 0;
+}
+.navbar-toggler[aria-expanded="true"] span:last-of-type {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.navbar-toggler[aria-expanded="false"] span {
+  transform: none;
+  opacity: 1;
+}
+/* HERO SECTION */
+#hero {
+  color: white;
+  background-color: #4948bb;
+  text-transform: capitalize;
+}
+#hero input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#hero button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.hero-text {
+  color: #babb48;
+}
+.hero-email-text {
+  font-size: 13px;
+  color: rgb(182, 181, 181);
+  padding-top: 10px;
+  margin-bottom: 50px;
+}
+.countdown {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  border: 3px solid grey;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.pulse-animation {
+  cursor: pointer;
+  animation: pulse 5s infinite;
+}
+.pulse-animation:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 30px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 30px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+.Ocean {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  background-color: #b3e5fc00;
+  overflow: hidden;
+}
+
+.Wave {
+  width: 1200px;
+  animation-name: swell;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  fill: #b9bb4846;
+}
+
+@keyframes swell {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.countdown-content {
+  display: block;
+}
+.status span {
+  font-style: italic;
+}
+#time {
+  font-size: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin: 0;
+}
+#progress {
+  background-color: white;
+  border: 2px solid #4948bb;
+  position: relative;
+  top: 150px;
+  padding: 30px 20px;
+  color: #4948bb;
+}
+.progress-badge {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #48bb83;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+/* PARTNER SECTION */
+#patners {
+  padding-bottom: 25px;
+}
+/* ABOUT US SECTION */
+#about {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+#about .col-2 {
+  text-align: center;
+}
+#about i {
+  font-size: 25px;
+  color: #babb01;
+}
+.about-text {
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #48bb83;
+  padding-bottom: 20px;
+}
+/* ECOSYSTEM SECTION */
+#ecosystem {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.ecosystem-btn {
+  color: #4948bb;
+  background-color: white !important;
+  border-radius: 5px !important;
+  text-transform: capitalize;
+}
+.ecosystem-btn.active {
+  color: white;
+  background-color: #48bb83 !important;
+  border-radius: 5px !important;
+}
+.ecosystem-btn:focus,
+.ecosystem-btn:active {
+  color: white;
+  background-color: #48bb83 !important;
+  border-radius: 5px !important;
+}
+/* FAQ */
+#faq {
+  padding-top: 50px;
+}
+.faq-heading {
+  text-transform: capitalize;
+  padding-bottom: 0;
+}
+.faq-heading button {
+  color: #48bb83 !important;
+}
+.no-box-shadow {
+  box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #bbbb0150;
+}
+.accordion-item {
+  border: none !important;
+}
+/* FOOTER SECTION */
+#footer {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background-color: #4880bb;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+.copyright {
+  margin: 0;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+  background-color: #4948bb;
+  text-transform: capitalize;
+}
+#footer ul {
+  text-transform: capitalize;
+}
+.list-header {
+  color: #48bb83;
+  font-size: 25px;
+  font-family: "Cardo", serif;
+  padding-bottom: 20px;
+}
+/* AIRDROP PAGE */
+h1 {
+  color: white;
+}
+#airdrop-header {
+  padding-bottom: 5px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+#airdrop-progress {
+  background-color: white;
+  border: 2px solid #4948bb;
+  position: relative;
+  top: 50px;
+  padding: 30px 20px;
+  color: #4948bb;
+}
+.participant-details {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #48bb83;
+  color: white;
+  text-transform: capitalize;
+}
+.participant-details p{
+  margin: 0;
+  padding: 0;
+}

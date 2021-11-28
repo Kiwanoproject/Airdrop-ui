@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <%- include ('./partials/header') %>
+    <title>The Kiwano Project Web App</title>
+  </head>
+  <body>
+    <nav id="navbar" class="navbar sticky-top navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">ecosystem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">airdrop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">faq</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <%- body %>
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="/images/partner.jbpg" class="img-fluid" alt="#" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+              veniam quidem autem aliquam sunt vero veritatis, dicta excepturi
+              quisquam amet maiores eveniet eligendi incidunt cum?
+            </p>
+          </div>
+          <div class="col-6 col-md-3">
+            <ul>
+              <li class="list-header">resources</li>
+              <li>home</li>
+              <li>about</li>
+              <li>ecosystem</li>
+              <li>faq</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <ul>
+              <li class="list-header">other links</li>
+              <li>airdrop</li>
+              <li>whitepaper</li>
+              <li>products</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul>
+              <li class="list-header">socials</li>
+              <li>telegram <span></span></li>
+              <li>twitter <span></span></li>
+              <li>medium <span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">&copy 2021. kiwano project</p>
+    </section>
+    <%- include ('./partials/footer') %>
+  </body>
+</html>

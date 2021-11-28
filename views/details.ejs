@@ -1,0 +1,29 @@
+<h1>details page</h1>
+<form action="/airdrop" method="post" id="participate">
+  <label for="email">Email: </label>
+  <input type="email" name="email" id="email" />
+  <label for="wallet">Wallet: </label>
+  <input type="text" name="wallet" id="wallet" />
+  <label for="twitter">Twitter: </label>
+  <input type="text" name="twitter" id="twitter" />
+  <label for="telegram">Telegram: </label>
+  <input type="text" name="telegram" id="telegram" />
+  <label for="referre">Referre: </label>
+  <input
+    type="text"
+    name="referre"
+    id="referre"
+    value="<%= detail.referral %>"
+  />
+  <button type="submit">submit</button>
+</form>
+
+<form action="/airdrop" method="get">
+  <label for="wallet">Wallet: </label>
+  <input type="text" name="wallet" id="wallet" />
+  <button type="submit">Search</button>
+</form>
+<p><%= detail.twitter %></p>
+<p><%= detail.telegram %></p>
+<p><%= detail.referre %></p>
+<p><%= detail.referral %></p>

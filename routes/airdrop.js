@@ -1,0 +1,70 @@
+const express = require("express");
+const Participant = require("../models/participant");
+const router = express.Router();
+// ROUTES
+
+router.get("/", async (req, res) => {
+  const details = await Participant.find({});
+  const wallet = req.query;
+  const ref = await Participant.findOne(wallet);
+  console.log(ref);
+  if(ref == null){
+    const referre = "1";
+    const refNum = "";
+    const refLink = "";
+    const balance = 0;
+    res.render("airdrop", { details, refNum , referre, refLink, balance})
+  }else{
+    const refNum = await Participant.find({referre: ref.referral});
+    console.log(refNum.length);
+  if (Object.entries(wallet).length === 0) {
+    const referre = "1";
+    const refNum = "";
+    const refLink = "";
+    const balance = 0;
+    res.render("airdrop", { details, refNum , referre, refLink, balance});
+    
+  } else {
+    const detail = await Participant.findOne(wallet);
+    console.log(wallet);
+    const referre = detail.referral;
+    const refLink = detail.referral;
+    const balance = 100;
+    res.render("airdrop", { detail, details, refNum , referre, refLink, balance});
+  }
+  }
+  
+});
+router.post("/", async (req, res) => {
+  const participant = new Participant({
+    email: req.body.email,
+    wallet: req.body.wallet,
+    twitter: req.body.twitter,
+    telegram: req.body.telegram,
+    referre: req.body.referre,
+  })
+    .save()
+    .then(() => {
+      console.log(req.body);
+    });
+  res.redirect("/airdrop");
+});
+router.get("/:referral", async (req, res) => {
+  const wallet = req.query;
+  const ref = await Participant.find(wallet);
+  const refNum = await Participant.find({referre: ref.referral});
+  console.log(wallet.ref);
+  const detail = await Participant.findOne(req.params);
+  if (detail !== null) {
+    const details = await Participant.find({});
+    const referre = detail.referral;
+    const refLink ="";
+    const balance = 0;
+    res.render("airdrop", { details, detail, refNum, referre, refLink, balance });
+  } else {
+    res.redirect("/airdrop");
+  }
+  console.log(detail);
+});
+
+module.exports = router;
