@@ -72,7 +72,7 @@ li {
 #navbar {
   background-color: #4948bb;
   font-family: "Cardo", serif;
-  padding: 20px;
+  padding: 10px;
 }
 a.nav-link {
   color: white;
@@ -325,6 +325,10 @@ h1 {
   top: 50px;
   padding: 30px 20px;
   color: #4948bb;
+}
+#how-to-participate{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .participant-details {
   margin-top: 30px;

@@ -1,38 +1,46 @@
 <section id="airdrop-header">
   <h1 class="center">airdrop page</h1>
   <div class="container">
+    <div class="container">
+      <p class="airdrop-success-msg"></p>
+    </div>
+  </div>
+  <div class="container">
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-12 col-md-4">
-        <div id="airdrop-progress">
-          <div class="container">
-            <h2 class="pb-3 d-flex">
-              Airdrop progress
-              <span class="progress-badge ms-auto">upcoming</span>
-            </h2>
-            <div class="progress-tag">
-              <p class="d-flex">
-                <span class="me-auto"
-                  ><span class="complimentary-color">0</span>
-                  participants </span
-                ><span class="ms-auto"
-                  ><span class="complimentary-color">15,000</span>
-                  participants</span
-                >
-              </p>
-            </div>
-            <div class="progress">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 10%"
-                aria-valuenow="10"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+        <div class="container">
+          <div id="airdrop-progress">
+            <div class="container">
+              <h2 class="pb-3 d-flex">
+                Airdrop progress
+                <span class="progress-badge ms-auto">upcoming</span>
+              </h2>
+              <div class="progress-tag">
+                <p class="d-flex">
+                  <span class="me-auto"
+                    ><span class="complimentary-color">0</span>
+                    participants </span
+                  ><span class="ms-auto"
+                    ><span class="complimentary-color">15,000</span>
+                    participants</span
+                  >
+                </p>
+              </div>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped"
+                  role="progressbar"
+                  style="width: 10%"
+                  aria-valuenow="10"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
+        
       </div>
       <div class="col-md-4"></div>
     </div>
@@ -102,6 +110,7 @@
           <form action="/airdrop" method="post">
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
+              <span class="input-group-text"><i class="far fa-envelope"></i></span>
               <input
                 type="email"
                 class="form-control input"
@@ -113,6 +122,7 @@
             </div>
             <div class="mb-3">
               <label for="wallet" class="form-label">Wallet: </label>
+              <span class="input-group-text"><i class="fas fa-wallet"></i></span>
               <input
                 type="text"
                 name="wallet"
@@ -123,6 +133,7 @@
             </div>
             <div class="mb-3">
               <label for="twitter" class="form-label">Twitter: </label>
+              <span class="input-group-text"><i class="fab fa-twitter"></i></span>
               <input
                 type="text"
                 name="twitter"
@@ -133,6 +144,7 @@
             </div>
             <div class="mb-3">
               <label for="telegram" class="form-label">Telegram: </label>
+              <span class="input-group-text"><i class="fab fa-telegram-plane"></i></span>
               <input
                 type="text"
                 name="telegram"
@@ -188,11 +200,13 @@
           <form action="/airdrop" method="get">
             <div class="mb-3">
               <label for="wallet" class="form-label">Wallet: </label>
+              <span class="input-group-text"><i class="fas fa-wallet"></i></span>
               <input
                 type="text"
                 name="wallet"
                 id="wallet"
                 class="form-control input"
+                placeholder="ETH Address"
               />
             </div>
 
