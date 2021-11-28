@@ -39,6 +39,6 @@ app.use("/", require("./routes/index"));
 app.use("/airdrop", require("./routes/airdrop"));
 
 // SERVER
-app.listen("3000", () => {
-  console.log("App Started On Port 3000");
+app.listen("80", () => {
+  console.log("App Started On Port 80");
 });
