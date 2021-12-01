@@ -15,6 +15,7 @@ router.post("/", (req, res) => {
     .catch((err) => {
       console.log("Failed to submit user email address. Error: ", err);
     });
+    req.flash('success_msg','You Joined Successfully!');
   res.redirect("/");
 });
 

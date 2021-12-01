@@ -7,60 +7,82 @@ router.get("/", async (req, res) => {
   const details = await Participant.find({});
   const wallet = req.query;
   const ref = await Participant.findOne(wallet);
-  console.log(ref);
-  if(ref == null){
+  if (ref == null) {
     const referre = "1";
     const refNum = "";
     const refLink = "";
     const balance = 0;
-    res.render("airdrop", { details, refNum , referre, refLink, balance})
-  }else{
-    const refNum = await Participant.find({referre: ref.referral});
-    console.log(refNum.length);
-  if (Object.entries(wallet).length === 0) {
-    const referre = "1";
-    const refNum = "";
-    const refLink = "";
-    const balance = 0;
-    res.render("airdrop", { details, refNum , referre, refLink, balance});
-    
+    res.render("airdrop", { details, refNum, referre, refLink, balance });
   } else {
-    const detail = await Participant.findOne(wallet);
-    console.log(wallet);
-    const referre = detail.referral;
-    const refLink = detail.referral;
-    const balance = 100;
-    res.render("airdrop", { detail, details, refNum , referre, refLink, balance});
+    const refNum = await Participant.find({ referre: ref.referral });
+    console.log(refNum.length);
+    if (Object.entries(wallet).length === 0) {
+      const referre = "1";
+      const refNum = "";
+      const refLink = "";
+      const balance = 0;
+      res.render("airdrop", { details, refNum, referre, refLink, balance });
+    } else {
+      const detail = await Participant.findOne(wallet);
+      console.log(wallet);
+      const referre = detail.referral;
+      const refLink = detail.referral;
+      const balance = 100;
+      res.render("airdrop", {
+        detail,
+        details,
+        refNum,
+        referre,
+        refLink,
+        balance,
+      });
+    }
   }
-  }
-  
 });
 router.post("/", async (req, res) => {
-  const participant = new Participant({
-    email: req.body.email,
-    wallet: req.body.wallet,
-    twitter: req.body.twitter,
-    telegram: req.body.telegram,
-    referre: req.body.referre,
-  })
-    .save()
-    .then(() => {
-      console.log(req.body);
+  const checkMail = await Participant.findOne({ email: req.body.email });
+      console.log(checkMail);
+      if (checkMail != null) {
+        req.flash('success_msg','You Already Participated!');
+        res.redirect("/airdrop");
+      } else {
+        const participant = new Participant({
+          email: req.body.email,
+          wallet: req.body.wallet,
+          twitter: req.body.twitter,
+          telegram: req.body.telegram,
+          referre: req.body.referre,
+        })
+          .save()
+          .then(() => {
+            console.log(req.body);
+            req.flash("success_msg", "Details Submitted Successfully!");
+            res.redirect("/airdrop");
+          });
+      };
+    
     });
-  res.redirect("/airdrop");
-});
+
+
 router.get("/:referral", async (req, res) => {
   const wallet = req.query;
   const ref = await Participant.find(wallet);
-  const refNum = await Participant.find({referre: ref.referral});
+  const refNum = await Participant.find({ referre: ref.referral });
   console.log(wallet.ref);
   const detail = await Participant.findOne(req.params);
   if (detail !== null) {
     const details = await Participant.find({});
     const referre = detail.referral;
-    const refLink ="";
+    const refLink = "";
     const balance = 0;
-    res.render("airdrop", { details, detail, refNum, referre, refLink, balance });
+    res.render("airdrop", {
+      details,
+      detail,
+      refNum,
+      referre,
+      refLink,
+      balance,
+    });
   } else {
     res.redirect("/airdrop");
   }

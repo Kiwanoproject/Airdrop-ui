@@ -31,14 +31,21 @@ app.use(
     secret: "secret",
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: true },
   })
 );
+// FLASH MESSAGES
+app.use(flash());
+app.use((req,res,next)=> {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error  = req.flash('error');
+next();
+});
 // ROUTES
 app.use("/", require("./routes/index"));
 app.use("/airdrop", require("./routes/airdrop"));
 
 // SERVER
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("App Started");
 });

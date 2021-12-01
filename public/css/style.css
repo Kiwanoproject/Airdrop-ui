@@ -22,6 +22,13 @@ h6 {
   font-family: "Cardo", serif;
   text-transform: uppercase;
 }
+li a{
+  color: white;
+  text-decoration: none;
+}
+li a:hover, li a:active, li a:focus{
+  color: #babb48; 
+}
 h1 {
   text-transform: capitalize;
 }
@@ -77,6 +84,12 @@ li {
 a.nav-link {
   color: white;
   text-transform: capitalize;
+}
+a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
+  color: #babb48;
+}
+a.navbar-brand{
+  color: white;
 }
 .navbar-toggler span {
   display: block;
@@ -304,10 +317,18 @@ a.nav-link {
   text-transform: capitalize;
 }
 .list-header {
-  color: #48bb83;
+  color: #babb48;
   font-size: 25px;
   font-family: "Cardo", serif;
   padding-bottom: 20px;
+}
+.footer-icon{
+  color: #babb48;
+  font-size: 20px;
+}
+.footer-icon:hover{
+  color: #48bb83;
+  font-size: 20px;
 }
 /* AIRDROP PAGE */
 h1 {
@@ -326,10 +347,10 @@ h1 {
   padding: 30px 20px;
   color: #4948bb;
 }
-#how-to-participate{
+#how-to-participate {
   padding-bottom: 20px;
 }
-#participate{
+#participate {
   padding-top: 20px;
 }
 .participant-details {
@@ -340,7 +361,21 @@ h1 {
   color: white;
   text-transform: capitalize;
 }
-.participant-details p{
+.participant-details p {
   margin: 0;
   padding: 0;
+}
+.airdrop-success-msg p {
+  text-align: center;
+  padding: 10px;
+  background-color: #48bb83a2;
+  color: white;
+  text-transform: capitalize;
+}
+.email-success-msg p {
+  text-align: center;
+  padding: 10px;
+  background-color: #48bb83a2;
+  color: white;
+  text-transform: capitalize;
 }
