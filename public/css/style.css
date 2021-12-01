@@ -379,3 +379,15 @@ h1 {
   color: white;
   text-transform: capitalize;
 }
+/* NOTICE */
+#notice{
+  padding-top: 0;
+  padding-bottom: 30px;
+
+}
+.notice{
+  background-color: #babb01;
+  color: white;
+  padding: 30px;
+  border-radius: 5px;
+}

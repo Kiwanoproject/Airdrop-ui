@@ -6,8 +6,13 @@ const Mail = require("../models/mail");
 router.get("/", (req, res) => {
   res.render("home");
 });
-router.post("/", (req, res) => {
-  const mail = new Mail({ email: req.body.email })
+router.post("/", async(req, res) => {
+  const checkMail = await Mail.findOne({ email: req.body.email });
+  if (checkMail != null) {
+    req.flash('success_msg','You joined Already!');
+    res.redirect("/");
+  } else {
+    const mail = new Mail({ email: req.body.email })
     .save()
     .then(() => {
       console.log(req.body);
@@ -17,6 +22,7 @@ router.post("/", (req, res) => {
     });
     req.flash('success_msg','You Joined Successfully!');
   res.redirect("/");
+  };
 });
 
 module.exports = router;

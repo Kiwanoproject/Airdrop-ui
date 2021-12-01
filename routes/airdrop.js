@@ -41,8 +41,10 @@ router.get("/", async (req, res) => {
 });
 router.post("/", async (req, res) => {
   const checkMail = await Participant.findOne({ email: req.body.email });
-      console.log(checkMail);
-      if (checkMail != null) {
+  const checkWallet = await Participant.findOne({ wallet: req.body.wallet });
+  const checkTwitter = await Participant.findOne({ twitter: req.body.twitter });
+  const checkTelegram = await Participant.findOne({ telegram: req.body.telegram });
+      if (checkMail != null || checkWallet != null || checkTwitter != null || checkTelegram != null ) {
         req.flash('success_msg','You Already Participated!');
         res.redirect("/airdrop");
       } else {
