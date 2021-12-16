@@ -24,5 +24,7 @@ router.post("/", async(req, res) => {
   res.redirect("/");
   };
 });
-
+router.get("/branding", (req, res) => {
+  res.render("branding");
+});
 module.exports = router;
