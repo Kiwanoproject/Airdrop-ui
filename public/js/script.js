@@ -1,3 +1,4 @@
+AOS.init();
 // VANTA JS
 VANTA.NET({
   el: "#hero",

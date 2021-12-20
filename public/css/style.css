@@ -3,6 +3,7 @@
   box-shadow: none;
   margin: 0;
   border-radius: 0;
+  transition: 500ms;
 }
 body {
   font-family: "Josefin Sans", sans-serif;
@@ -22,12 +23,14 @@ h6 {
   font-family: "Cardo", serif;
   text-transform: uppercase;
 }
-li a{
+li a {
   color: white;
   text-decoration: none;
 }
-li a:hover, li a:active, li a:focus{
-  color: #babb48; 
+li a:hover,
+li a:active,
+li a:focus {
+  color: #babb48;
 }
 h1 {
   text-transform: capitalize;
@@ -37,6 +40,11 @@ h2 {
   color: #4948bb;
   padding-bottom: 30px;
 }
+h3 {
+  font-size: 13px;
+  color: #4880bb;
+  padding-bottom: 30px;
+}
 section {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -44,12 +52,18 @@ section {
 li {
   list-style: none;
 }
-.light-grey p{
+.light-grey p {
   color: rgb(77, 77, 77);
 }
 .color {
   color: #babb01;
   color: #babb48;
+}
+.text-color-white {
+  color: white;
+}
+.text-color-green {
+  color: black;
 }
 .btn-style {
   color: white;
@@ -71,7 +85,7 @@ li {
 .btn-download-style {
   color: white;
   background-color: #48bb8300;
-  border:2px solid white;
+  border: 2px solid white;
   text-transform: capitalize;
   font-size: 15px;
   font-family: "Cardo", serif;
@@ -100,13 +114,18 @@ li {
   padding: 10px;
 }
 a.nav-link {
+  font-size: 12px;
   color: white;
   text-transform: uppercase;
 }
-a.nav-link:hover, a.nav-link:focus, a.nav-link:active {
+a.nav-link:hover {
   color: #48bb83;
 }
-a.navbar-brand{
+a.nav-link:focus,
+a.nav-link:active {
+  color: white;
+}
+a.navbar-brand {
   color: white;
 }
 .navbar-toggler span {
@@ -319,7 +338,7 @@ a.navbar-brand{
 #footer {
   padding-bottom: 0;
   margin-bottom: 0;
-  background-color: #4880bb;
+  background-color: #393898;
   text-align: left;
   color: rgb(255, 255, 255);
 }
@@ -334,19 +353,20 @@ a.navbar-brand{
 #footer ul {
   text-transform: capitalize;
 }
+#footer a:hover {
+  padding-left: 10px;
+}
 .list-header {
   color: #babb48;
   font-size: 25px;
   font-family: "Cardo", serif;
   padding-bottom: 20px;
 }
-.footer-icon{
-  color: #babb48;
-  font-size: 20px;
-}
-.footer-icon:hover{
+.footer-icon {
   color: #48bb83;
-  font-size: 20px;
+}
+.footer-icon:hover {
+  color: #babb48;
 }
 /* AIRDROP PAGE */
 h1 {
@@ -398,14 +418,68 @@ h1 {
   text-transform: capitalize;
 }
 /* NOTICE */
-#notice{
+#notice {
   padding-top: 0;
-  padding-bottom: 30px;
-
 }
-.notice{
+.notice {
   background-color: #babb01;
   color: white;
   padding: 30px;
   border-radius: 5px;
+}
+/* BRANDING PAGE  */
+#branding-header {
+  padding-bottom: 5px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.branding-header-text {
+  padding-top: 20px;
+  text-transform: capitalize;
+  font-size: 18px;
+  color: white;
+}
+.kiwano-brand-logo {
+  width: 300px;
+  height: 100px;
+}
+.colored-box {
+  width: 100%;
+  height: 150px;
+  background-color: #48bb83;
+}
+.color-1 {
+  background-color: rgb(73, 72, 187);
+}
+.color-2 {
+  background-color: rgb(72, 187, 131);
+}
+.color-3 {
+  background-color: rgb(186, 187, 1);
+}
+.color-4 {
+  background-color: rgb(57, 56, 152);
+}
+.color-5 {
+  background-color: rgb(186, 187, 72);
+}
+.color-6 {
+  background-color: rgb(204, 204, 204);
+}
+.h1 {
+  font-size: 40px;
+}
+.h2 {
+  font-size: 30px;
+}
+.h3 {
+  font-size: 20px;
+}
+.download-package {
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.download-package:hover {
+  color: #48bb83;
 }
