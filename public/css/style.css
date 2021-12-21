@@ -76,6 +76,25 @@ li {
   font-family: "Cardo", serif;
   border-radius: 5px;
 }
+.btn-copy-style {
+  color: white;
+  padding: 3px 10px;
+  background-color: #4880bb;
+  border: none;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-family: "Cardo", serif;
+  border-radius: 5px;
+}
+.btn-copy-style:hover,
+.btn-copy-style:focus,
+.btn-copy-style:active {
+  color: white;
+  background-color: #babb01;
+}
+.copy-button{
+  padding-left: 20px;
+}
 .btn-style:hover,
 .btn-style:focus,
 .btn-style:active {
@@ -106,7 +125,9 @@ li {
 .complimentary-color {
   color: #babb01 !important;
 }
-
+.lowercase{
+  text-transform: lowercase;
+}
 /* NAVBAR */
 #navbar {
   background-color: #4948bb;
@@ -368,6 +389,9 @@ a.navbar-brand {
 .footer-icon:hover {
   color: #babb48;
 }
+.footer-logo{
+  width: 100px;
+}
 /* AIRDROP PAGE */
 h1 {
   color: white;
@@ -440,8 +464,9 @@ h1 {
   color: white;
 }
 .kiwano-brand-logo {
+  display: flex;
   width: 300px;
-  height: 100px;
+  text-align: center;
 }
 .colored-box {
   width: 100%;

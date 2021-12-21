@@ -15,7 +15,6 @@ router.get("/", async (req, res) => {
     res.render("airdrop", { details, refNum, referre, refLink, balance });
   } else {
     const refNum = await Participant.find({ referre: ref.referral });
-    console.log(refNum.length);
     if (Object.entries(wallet).length === 0) {
       const referre = "1";
       const refNum = "";

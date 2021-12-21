@@ -26,6 +26,7 @@ VANTA.NET({
   backgroundColor: 0x4948bb,
   maxDistance: 12.0,
 });
+
 // COUNTDOWN
 var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
 
@@ -46,3 +47,17 @@ var x = setInterval(function () {
     document.getElementById("time").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// COPY REFFERAL LINK
+var text_to_copy = document.getElementById("text_to_copy").innerHTML;
+var copy_button = document.getElementById("copy_button");
+
+copy_button.addEventListener("click", function () {
+  var temp = document.createElement("INPUT");
+  temp.value = text_to_copy;
+  document.body.appendChild(temp);
+  temp.select();
+  document.execCommand("copy");
+  temp.remove();
+  copy_button.innerHTML = "copied";
+});
