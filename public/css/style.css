@@ -128,6 +128,9 @@ li {
 .lowercase{
   text-transform: lowercase;
 }
+.radius{
+  border-radius: 20px;
+}
 /* NAVBAR */
 #navbar {
   background-color: #4948bb;
