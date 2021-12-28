@@ -86,10 +86,10 @@
               <div
                 class="progress-bar progress-bar-striped"
                 role="progressbar"
-                style="width: 5%"
-                aria-valuenow="10"
+                style="width: <%= details.length * 100 / 50000 %>%"
+                aria-valuenow="<%= details.length %>"
                 aria-valuemin="0"
-                aria-valuemax="100"
+                aria-valuemax="50000"
               ></div>
             </div>
           </div>

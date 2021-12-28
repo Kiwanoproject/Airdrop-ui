@@ -32,10 +32,10 @@
               <div
                 class="progress-bar progress-bar-striped"
                 role="progressbar"
-                style="width: 10%"
-                aria-valuenow="10"
+                style="width: <%= details.length * 100 / 50000 %>%"
+                aria-valuenow="<%= details.length %>"
                 aria-valuemin="0"
-                aria-valuemax="100"
+                aria-valuemax="50000"
               ></div>
             </div>
           </div>
@@ -71,15 +71,15 @@
           <div class="accordion-body">
             <p id="time" class="center"></p>
 
-            <P>Follow us on Twitter: https://twitter.com/projectkiwano</P>
+            <P>Follow us on Twitter: <a href="https://twitter.com/projectkiwano">https://twitter.com/projectkiwano</a></P>
 
             <P
-              >Join the Telegram group: https://t.me/the_kiwano_project_group</P
+              >Join the Telegram group: <a href="https://t.me/the_kiwano_project_group">https://t.me/the_kiwano_project_group</a></P
             >
 
             <P
-              >Join the Telegram announcements channel
-              https://t.me/the_kiwano_project</P
+              >Join the Telegram announcements channel: <a href="https://t.me/the_kiwano_project">https://t.me/the_kiwano_project</a>
+              </P
             >
 
             <P
@@ -89,8 +89,10 @@
 
             <P
               >(<span class="complimentary-color">Optional</span>) Follow us on
-              Facebook: https://www.facebook.com/projectkiwano</P
+              Facebook: <a href="https://www.facebook.com/projectkiwano">https://www.facebook.com/projectkiwano</a></P
             >
+            <p>Submit your details via the participate form.</p>
+            <p class="complimentary-color">To see your referral link, referrals and balance. Paste your wallet address in the details form and hit search.</p>
           </div>
         </div>
       </div>
@@ -167,7 +169,7 @@
                 value="<%= referre %>"
               />
             </div>
-            <button type="submit" class="btn btn-style form-control">
+            <button type="submit" class="btn btn-style form-control" disabled>
               Submit
             </button>
           </form>
@@ -187,21 +189,21 @@
               <tbody>
                 <tr>
                   <td class="p-3">
-                    0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243
+                    <%= details[details.length - 1].wallet %>
                   </td>
-                  <td class="p-3">kiwano</td>
+                  <td class="p-3"><%= details[details.length - 1].referral %></td>
                 </tr>
                 <tr>
                   <td class="p-3">
-                    0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243
+                    <%= details[details.length - 2].wallet %>
                   </td>
-                  <td class="p-3">kiwano</td>
+                  <td class="p-3"><%= details[details.length - 2].referral %></td>
                 </tr>
                 <tr>
                   <td class="p-3">
-                    0x68f8480d2Ed7a12394C79F4B4a98b97d0C27D243
+                    <%= details[details.length - 3].wallet %>
                   </td>
-                  <td class="p-3">kiwano</td>
+                  <td class="p-3"><%= details[details.length - 3].referral %></td>
                 </tr>
               </tbody>
             </table>
@@ -224,7 +226,7 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-style form-control">
+            <button type="submit" class="btn btn-style form-control" disabled>
               Search
             </button>
           </form>
@@ -239,7 +241,7 @@
           <P>
             Referral Link:
             <span id="text_to_copy" class="lowercase"
-              >http://kiwanoproject.com/airdrop/<%= refLink %></span
+              >https://kiwanoproject.com/airdrop/<%= refLink %></span
             ><span class="copy-button"
               ><button id="copy_button" class="btn btn-copy-style">
                 Copy
@@ -251,7 +253,7 @@
           <p>refered: <%= refNum.length %></p>
         </div>
         <div class="col-md-3">
-          <p>balance: <%= refNum.length * 10 + balance %></p>
+          <p>balance: <%= refNum.length * 10 + balance %> WANO</p>
         </div>
       </div>
     </div>

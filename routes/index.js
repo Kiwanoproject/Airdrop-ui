@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Mail = require("../models/mail");
+const Participant = require("../models/participant");
 
 // ROUTES
-router.get("/", (req, res) => {
-  res.render("home");
+router.get("/", async(req, res) => {
+  const details = await Participant.find({});
+  res.render("home", {details});
 });
 router.post("/", async(req, res) => {
   const checkMail = await Mail.findOne({ email: req.body.email });
