@@ -11,7 +11,7 @@ const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 
 // enable ssl redirect
-app.use(sslRedirect([
+app.use(sslRedirect.sslRedirect([
   'other',
   'development',
   'production'
