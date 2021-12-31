@@ -49,7 +49,7 @@ next();
 app.use("/", require("./routes/index"));
 app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
-  res.redirect("home");
+  res.redirect("/");
 });
 // SERVER
 app.listen(process.env.PORT , () => {
