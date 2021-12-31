@@ -1,5 +1,5 @@
-const sslRedirect = require('heroku-ssl-redirect');
 const express = require("express");
+const forceSsl = require('force-ssl-heroku');
 const app = express();
 const path = require("path");
 const router = express.Router();
@@ -10,12 +10,7 @@ const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 
-// enable ssl redirect
-app.use(sslRedirect.sslRedirect([
-  'other',
-  'development',
-  'production'
-  ]));
+app.use(forceSsl);
 
 // DATABASE
 mongoose
