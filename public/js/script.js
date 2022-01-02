@@ -1,3 +1,6 @@
+setTimeout(function () {
+  $("#loader").addClass("d-none");
+}, 5000);
 AOS.init();
 // VANTA JS
 VANTA.NET({

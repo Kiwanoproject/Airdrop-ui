@@ -1,6 +1,9 @@
 const express = require("express");
 const Participant = require("../models/participant");
 const router = express.Router();
+const mailgun = require("mailgun-js");
+const DOMAIN = "kiwanoproject.com";
+const mg = mailgun({apiKey: "96961a488864e2ea7b7b2bbc298dbb1c-cac494aa-b9909a05", domain: DOMAIN});
 // ROUTES
 
 router.get("/", async (req, res) => {
@@ -58,6 +61,15 @@ router.post("/", async (req, res) => {
           .then(() => {
             console.log(req.body);
             req.flash("success_msg", "Details Submitted Successfully!");
+            const data = {
+              from: "Kiwano Project <no-reply@kiwanoproject.com>",
+              to: req.body.email,
+              subject: "Kiwano Airdrop Participation",
+              template: "airdrop"
+            };
+            mg.messages().send(data, function (error, body) {
+              console.log(body);
+            });
             res.redirect("/airdrop");
           });
       };
