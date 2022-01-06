@@ -131,6 +131,28 @@ li {
 .radius{
   border-radius: 20px;
 }
+.buy-kiwano{
+  border: 2px solid #4948bb; 
+  border-radius: 10px; 
+}
+.buy-kiwano:hover{
+  border: 2px solid #babb01; 
+  background-color: #ccc ;
+}
+.blink {
+  animation: blinking 0.6s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    color: #ff3d50;
+  }50% {
+    color: #55d66b;
+  }
+  100% {
+    color: #babb01;
+  }
+}
 /* NAVBAR */
 #navbar {
   background-color: #4948bb;

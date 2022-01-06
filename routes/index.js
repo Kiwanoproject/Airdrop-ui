@@ -43,4 +43,7 @@ router.post("/", async(req, res) => {
 router.get("/branding", (req, res) => {
   res.render("branding");
 });
+router.get("/buy", (req, res) => {
+  res.render("buy");
+});
 module.exports = router;
