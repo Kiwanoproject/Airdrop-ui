@@ -31,7 +31,7 @@ VANTA.NET({
 });
 
 // COUNTDOWN
-var countDownDate = new Date("Jan 7, 2022 00:00:00").getTime();
+var countDownDate = new Date("Jan 14, 2022 00:00:00").getTime();
 
 var x = setInterval(function () {
   var now = new Date().getTime();
