@@ -7,6 +7,8 @@ const mg = mailgun({apiKey: "96961a488864e2ea7b7b2bbc298dbb1c-cac494aa-b9909a05"
 // ROUTES
 
 router.get("/", async (req, res) => {
+  const title = "The Kiwano Project - Airdrops";
+  const description ="The Kiwano project official airdrop page. The kiwano airdrop program is live.";
   const details = await Participant.find({});
   const wallet = req.query;
   const ref = await Participant.findOne(wallet);
@@ -23,7 +25,7 @@ router.get("/", async (req, res) => {
       const refNum = "";
       const refLink = "";
       const balance = 0;
-      res.render("airdrop", { details, refNum, referre, refLink, balance });
+      res.render("airdrop", { details, refNum, referre, refLink, balance, title, description });
     } else {
       const detail = await Participant.findOne(wallet);
       console.log(wallet);
@@ -37,6 +39,8 @@ router.get("/", async (req, res) => {
         referre,
         refLink,
         balance,
+        title,
+        description,
       });
     }
   }
@@ -78,6 +82,8 @@ router.post("/", async (req, res) => {
 
 
 router.get("/:referral", async (req, res) => {
+  const title = "The Kiwano Project - Airdrops";
+  const description ="The Kiwano project official airdrop page. The kiwano airdrop program is live.";
   const wallet = req.query;
   const ref = await Participant.find(wallet);
   const refNum = await Participant.find({ referre: ref.referral });
@@ -95,6 +101,8 @@ router.get("/:referral", async (req, res) => {
       referre,
       refLink,
       balance,
+      title,
+      description,
     });
   } else {
     res.redirect("/airdrop");
