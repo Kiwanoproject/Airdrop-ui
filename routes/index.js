@@ -52,4 +52,9 @@ router.get("/buy", (req, res) => {
   const description ="You can now buy kiwano(wano) tokens via our official website. Buy now!";
   res.render("buy", {title, description});
 });
+router.get("/token", (req, res) => {
+  const title = "The Kiwano Project - Tokenomics";
+  const description ="The Kiwano project is a project centred around a learning platform that aims to foster the adoption of cryptocurrencies and blockchain technology.";
+  res.render("token", {title, description});
+});
 module.exports = router;

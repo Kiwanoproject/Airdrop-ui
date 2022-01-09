@@ -536,11 +536,17 @@ h1 {
 
 /* TOKENS */
 #token{
-  background-color: #4948bb;
+  background-color: white;
   color: white;
   text-transform: uppercase;
 }
-#token h2, #token h3{
+#token .notice{
+  background-color: #4948bb;
+}
+#token h2{
+ color: #4948bb;
+} 
+#token h3{
   color: white;
 }
 #token span{
@@ -600,4 +606,21 @@ h1 {
   100% {
     transform: rotate(1800deg);
   }
+}
+/* WIDGET */
+.widget{
+  background-color: #55d66a4b;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: fixed;
+  top: 50%;
+  z-index: 899999;
+}
+.widget p{
+  text-align: center;
+  padding-top: 40px;
+}
+.widget a{
+  text-decoration: none;
 }
