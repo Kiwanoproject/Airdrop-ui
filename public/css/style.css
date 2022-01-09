@@ -624,3 +624,9 @@ h1 {
 .widget a{
   text-decoration: none;
 }
+.red{
+  color: red;
+}
+.black{
+  color: black;
+}
