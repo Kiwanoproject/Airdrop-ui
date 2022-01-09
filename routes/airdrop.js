@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
       console.log(wallet);
       const referre = detail.referral;
       const refLink = detail.referral;
-      const balance = 100;
+      const balance = 10;
       res.render("airdrop", {
         detail,
         details,
