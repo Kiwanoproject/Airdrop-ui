@@ -24,7 +24,7 @@ const ParticipantSchema = new mongoose.Schema({
   balance: {
     type: Number,
     required: true,
-    default: 100,
+    default: 10,
   },
   referral: {
     type: String,
