@@ -1,5 +1,4 @@
 const express = require("express");
-const forceSsl = require('force-ssl-heroku');
 const app = express();
 const path = require("path");
 const router = express.Router();
