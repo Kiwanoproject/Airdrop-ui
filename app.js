@@ -9,7 +9,6 @@ const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 
-app.use(forceSsl);
 
 // DATABASE
 mongoose
