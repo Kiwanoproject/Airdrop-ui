@@ -1,7 +1,6 @@
 const express = require("express");
 const Participant = require("../models/participant");
 const router = express.Router();
-const mailgun = require("mailgun-js");
 
 // ROUTES
 

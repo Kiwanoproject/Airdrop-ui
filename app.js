@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const compression = require('compression');
 const path = require("path");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -22,6 +23,7 @@ mongoose
 
 // VIEWS ENGINE
 app.set("view engine", "ejs");
+app.use(compression());
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(expressEjsLayout);
 app.use(express.urlencoded({ extended: true }));
@@ -31,8 +33,8 @@ app.use(express.json());
 app.use(
   session({
     secret: "secret",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
   })
 );
 // FLASH MESSAGES
@@ -50,6 +52,6 @@ app.get("*", (req, res) => {
   res.redirect("/");
 });
 // SERVER
-app.listen(process.env.PORT , () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("App Started");
 });
