@@ -7,15 +7,14 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const title = "The Kiwano Project - Airdrops";
   const description ="The Kiwano project official airdrop page. The kiwano airdrop program is live.";
-  const details = await Participant.find({});
-  const wallet = req.query;
+  const wallet = req.query; 
   const ref = await Participant.findOne(wallet);
   if (ref == null) {
     const referre = "1";
     const refNum = "";
     const refLink = "";
     const balance = 0;
-    res.render("airdrop", { details, refNum, referre, refLink, balance, description, title});
+    res.render("airdrop", { refNum, referre, refLink, balance, description, title});
   } else {
     const refNum = await Participant.find({ referre: ref.referral });
     if (Object.entries(wallet).length === 0) {
@@ -23,16 +22,14 @@ router.get("/", async (req, res) => {
       const refNum = "";
       const refLink = "";
       const balance = 0;
-      res.render("airdrop", { details, refNum, referre, refLink, balance, title, description });
+      res.render("airdrop", { refNum, referre, refLink, balance, title, description });
     } else {
       const detail = await Participant.findOne(wallet);
-      console.log(wallet);
       const referre = detail.referral;
       const refLink = detail.referral;
       const balance = 10;
       res.render("airdrop", {
         detail,
-        details,
         refNum,
         referre,
         refLink,
@@ -61,7 +58,6 @@ router.post("/", async (req, res) => {
         })
           .save()
           .then(() => {
-            console.log(req.body);
             req.flash("success_msg", "Details Submitted Successfully!");
             res.redirect("/airdrop");
           });
@@ -76,15 +72,12 @@ router.get("/:referral", async (req, res) => {
   const wallet = req.query;
   const ref = await Participant.find(wallet);
   const refNum = await Participant.find({ referre: ref.referral });
-  console.log(wallet.ref);
   const detail = await Participant.findOne(req.params);
   if (detail !== null) {
-    const details = await Participant.find({});
     const referre = detail.referral;
     const refLink = "";
     const balance = 0;
     res.render("airdrop", {
-      details,
       detail,
       refNum,
       referre,
@@ -96,7 +89,6 @@ router.get("/:referral", async (req, res) => {
   } else {
     res.redirect("/airdrop");
   }
-  console.log(detail);
 });
 
 module.exports = router;

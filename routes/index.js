@@ -2,18 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Mail = require("../models/mail");
 const Participant = require("../models/participant");
-const mailgun = require("mailgun-js");
-const DOMAIN = "kiwanoproject.com";
-const mg = mailgun({apiKey: "96961a488864e2ea7b7b2bbc298dbb1c-cac494aa-b9909a05", domain: DOMAIN});
 
 
 
 // ROUTES
 router.get("/", async(req, res) => {
-  const details = await Participant.find({});
   const title = "The Kiwano Project - Fostering Crypto Usability";
   const description ="The Kiwano project is a project centred around a learning platform that aims to foster the adoption of cryptocurrencies and blockchain technology.";
-  res.render("home", {details, title, description});
+  res.render("home", {title, description});
 });
 router.post("/", async(req, res) => {
   const checkMail = await Mail.findOne({ email: req.body.email });
@@ -22,23 +18,8 @@ router.post("/", async(req, res) => {
     res.redirect("/");
   } else {
     const mail = new Mail({ email: req.body.email })
-    .save()
-    .then(() => {
-      console.log(req.body);
-    })
-    .catch((err) => {
-      console.log("Failed to submit user email address. Error: ", err);
-    });
-    req.flash('success_msg','You Joined Successfully!');
-    const data = {
-      from: "Kiwano Project <no-reply@kiwanoproject.com>",
-      to: req.body.email,
-      subject: "Kiwano Newsletter Subscription",
-      template: "email-list"
-    };
-    mg.messages().send(data, function (error, body) {
-      console.log(body);
-    });
+    .save();
+  req.flash('success_msg','You Joined Successfully!');
   res.redirect("/");
   };
 });
