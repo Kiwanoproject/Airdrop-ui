@@ -18,9 +18,14 @@ router.post("/", async(req, res) => {
     res.redirect("/");
   } else {
     const mail = new Mail({ email: req.body.email })
-    .save();
-  req.flash('success_msg','You Joined Successfully!');
-  res.redirect("/");
+    .save()
+    .then(() => {
+        req.flash('success_msg','You Joined Successfully!');
+        res.redirect("/");
+        })
+  .catch((err) => {
+        res.redirect("/");
+        }); 
   };
 });
 router.get("/branding", (req, res) => {
