@@ -60,7 +60,9 @@ router.post("/", async (req, res) => {
           .then(() => {
             req.flash("success_msg", "Details Submitted Successfully!");
             res.redirect("/airdrop");
-          });
+          }).catch((err) => {
+             res.redirect("/airdrop)
+            });
       };
     
     });
