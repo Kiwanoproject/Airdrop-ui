@@ -9,6 +9,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
+const Pass = require("./models/pass");
 
 // DATABASE
 mongoose
@@ -46,13 +47,12 @@ next();
 });
 // ROUTES
 app.use("/", require("./routes/index"));
+app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
 });
-app.use("/airdrop", require("./routes/airdrop"));
-
 // SERVER
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT , () => {
   console.log("App Started");
 });
 

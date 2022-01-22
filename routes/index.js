@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Mail = require("../models/mail");
 const Participant = require("../models/participant");
+const Pass = require("../models/pass");
 
 
 
@@ -32,6 +33,38 @@ router.get("/branding", (req, res) => {
   const title = "The Kiwano Project - Branding";
   const description ="Download the Kiwano project's official logos and mockup kit.";
   res.render("branding", {title, description});
+});
+router.get("/details", async(req, res) => {
+  const title = "The Kiwano Project - Airdrop";
+  const description ="The Kiwano project official airdrop page. The kiwano airdrop program is live.";
+  const wallet = req.query; 
+  const ref = await Pass.findOne(wallet).lean();
+  if (ref == null) {
+    const refNum = '';
+    const mywallet = "NONE";
+    const balance = 0;
+    res.render("details", { refNum, mywallet, balance, description, title});
+  } else {
+    const refNum = await Pass.find({ referre: ref.referral }).lean();
+    if (Object.entries(wallet).length === 0) {
+      const mywallet = "NONE";
+      const refNum = '';
+      const balance = 0;
+      res.render("details", { refNum, mywallet, balance, title, description });
+    } else {
+      const detail = await Pass.findOne(wallet).lean();
+      const mywallet = detail.wallet;
+      const balance = 10;
+      res.render("details", {
+        detail,
+        refNum,
+        mywallet,
+        balance,
+        title,
+        description,
+      });
+    }
+  }
 });
 router.get("/buy", (req, res) => {
   const title = "The Kiwano Project - Buy Kiwano Tokens Here";

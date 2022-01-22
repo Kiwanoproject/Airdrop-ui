@@ -636,3 +636,26 @@ h1 {
 .black{
   color: black;
 }
+/* AIRDROP DETAILS */
+.my-airdrop-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+  background-color: #4880bb;
+  color: white;
+  border-radius: 20px;
+}
+.my-airdrop-details span{
+  color: #babb48;
+
+}
+.mysmall{
+  font-size: 10px !important;
+  
+}
+.my-airdrop-details span:hover{
+  color: #48bb83;
+}

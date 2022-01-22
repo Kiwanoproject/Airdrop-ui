@@ -1,29 +1,76 @@
-<h1>details page</h1>
-<form action="/airdrop" method="post" id="participate">
-  <label for="email">Email: </label>
-  <input type="email" name="email" id="email" />
-  <label for="wallet">Wallet: </label>
-  <input type="text" name="wallet" id="wallet" />
-  <label for="twitter">Twitter: </label>
-  <input type="text" name="twitter" id="twitter" />
-  <label for="telegram">Telegram: </label>
-  <input type="text" name="telegram" id="telegram" />
-  <label for="referre">Referre: </label>
-  <input
-    type="text"
-    name="referre"
-    id="referre"
-    value="<%= detail.referral %>"
-  />
-  <button type="submit">submit</button>
-</form>
+<section id="airdrop-headers">
+  <h1 class="center">kiwano Airdrop Details</h1>
+  <div class="container">
+    <p class="center branding-header-text">
+    </p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 class="center">airdrop round one qualified participants</h2>
 
-<form action="/airdrop" method="get">
-  <label for="wallet">Wallet: </label>
-  <input type="text" name="wallet" id="wallet" />
-  <button type="submit">Search</button>
-</form>
-<p><%= detail.twitter %></p>
-<p><%= detail.telegram %></p>
-<p><%= detail.referre %></p>
-<p><%= detail.referral %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="my-airdrop-details">
+            <p>Total individuals that participated: <span>66,000+</span></p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="my-airdrop-details">
+            <p>Total individuals that qualified: <span>9,297</span></p>
+          </div>
+        </div>
+      </div>
+       <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-3"></div>
+          <div class="col-md-6 mb-3">
+            <div class="container center">
+              <h2 class="center">Check You Details</h2>
+              <form action="/details" method="get">
+                <div class="input-group mb-3">
+                  <span class="input-group-text"
+                    ><i class="fas fa-wallet"></i
+                  ></span>
+                  <input
+                    type="text"
+                    name="wallet"
+                    id="wallet"
+                    class="form-control input"
+                    placeholder="BSC Address"
+                  />
+                </div>
+    
+                <button type="submit" class="btn btn-style form-control">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3"></div>
+        </div>
+       </div>
+       <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="my-airdrop-details">
+              <p>My referals: <span><%= refNum.length %></span></p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="my-airdrop-details">
+              <p>my wallet: <span class="mysmall"><%= mywallet %></span></p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="my-airdrop-details">
+              <p>My tokens: <span><%= refNum.length * 10 + balance %></span> wano</p>
+            </div>
+          </div>
+        </div> 
+       </div>
+        
+    </div>
+  </div>
+</section>
