@@ -10,7 +10,6 @@ const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 
-
 // DATABASE
 mongoose
   .connect("mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority")
@@ -47,12 +46,13 @@ next();
 });
 // ROUTES
 app.use("/", require("./routes/index"));
-app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
 });
+app.use("/airdrop", require("./routes/airdrop"));
+
 // SERVER
-app.listen(process.env.PORT , () => {
+app.listen(process.env.PORT, () => {
   console.log("App Started");
 });
 
