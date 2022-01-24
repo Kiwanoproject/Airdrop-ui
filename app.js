@@ -10,10 +10,11 @@ const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 const Pass = require("./models/pass");
+const dotenv = require('dotenv').config();
 
 // DATABASE
 mongoose
-  .connect("mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority")
+  .connect(process.env.DB_URL)
   .then(() => {
     console.log("Database connected");
   })
@@ -52,7 +53,7 @@ app.get("*", (req, res) => {
   res.redirect("/");
 });
 // SERVER
-app.listen(process.env.PORT , () => {
+app.listen(process.env.PORT, () => {
   console.log("App Started");
 });
 
