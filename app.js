@@ -48,9 +48,6 @@ next();
 });
 // ROUTES
 app.use("/", require("./routes/index"));
-app.get("*", (req, res) => {
-  res.redirect("/");
-});
 app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
