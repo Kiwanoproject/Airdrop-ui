@@ -52,6 +52,7 @@ app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
 });
+
 // SERVER
 app.listen(process.env.PORT, () => {
   console.log("App Started");
