@@ -13,14 +13,14 @@ const Pass = require("./models/pass");
 const dotenv = require('dotenv').config();
 
 // DATABASE
-mongoose
-  .connect('mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority')
-  .then(() => {
-    console.log("Database connected");
-  })
-  .catch((err) => {
-    console.log("Database connection failed. Error: ", err);
-  });
+// mongoose
+//   .connect('mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority')
+//   .then(() => {
+//     console.log("Database connected");
+//   })
+//   .catch((err) => {
+//     console.log("Database connection failed. Error: ", err);
+//   });
 
 // VIEWS ENGINE
 app.set("view engine", "ejs");

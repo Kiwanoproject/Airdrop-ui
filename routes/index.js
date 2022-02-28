@@ -13,21 +13,23 @@ router.get("/", async(req, res) => {
   res.render("home", {title, description});
 });
 router.post("/", async(req, res) => {
-  const checkMail = await Mail.findOne({ email: req.body.email });
-  if (checkMail != null) {
-    req.flash('success_msg','You joined Already!');
-    res.redirect("/");
-  } else {
-    const mail = new Mail({ email: req.body.email })
-    .save()
-    .then(() => {
-        req.flash('success_msg','You Joined Successfully!');
-        res.redirect("/");
-        })
-  .catch((err) => {
-        res.redirect("/");
-        }); 
-  };
+  // const checkMail = await Mail.findOne({ email: req.body.email });
+  // if (checkMail != null) {
+  //   req.flash('success_msg','You joined Already!');
+  //   res.redirect("/");
+  // } else {
+  //   const mail = new Mail({ email: req.body.email })
+  //   .save()
+  //   .then(() => {
+  //       req.flash('success_msg','You Joined Successfully!');
+  //       res.redirect("/");
+  //       })
+  // .catch((err) => {
+  //       res.redirect("/");
+  //       }); 
+  // };
+
+  res.redirect("/");
 });
 router.get("/branding", (req, res) => {
   const title = "The Kiwano Project - Branding";
