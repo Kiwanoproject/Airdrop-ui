@@ -1,3 +1,4 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require("express");
 const app = express();
 const compression = require('compression');
@@ -11,6 +12,7 @@ const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 const Pass = require("./models/pass");
 const dotenv = require('dotenv').config();
+app.use(sslRedirect());
 
 // DATABASE
 // mongoose
