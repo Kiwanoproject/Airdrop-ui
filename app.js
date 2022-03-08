@@ -14,7 +14,7 @@ const dotenv = require("dotenv").config();
 
 // DATABASE 
 mongoose
-  .connect("mongodb+srv://kiwanoproject:kiwanoproject360@cluster0.mrpby.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+  .connect(process.env.MONGOURL)
   .then(() => {
     console.log("Database connected");
   })
