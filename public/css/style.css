@@ -52,6 +52,11 @@ section {
 li {
   list-style: none;
 }
+.top-alert {
+  height: 45px;
+  text-transform: capitalize;
+  color: white;
+}
 .light-grey p {
   color: rgb(77, 77, 77);
 }
@@ -92,7 +97,7 @@ li {
   color: white;
   background-color: #babb01;
 }
-.copy-button{
+.copy-button {
   padding-left: 20px;
 }
 .btn-style:hover,
@@ -125,19 +130,19 @@ li {
 .complimentary-color {
   color: #babb01 !important;
 }
-.lowercase{
+.lowercase {
   text-transform: lowercase;
 }
-.radius{
+.radius {
   border-radius: 20px;
 }
-.buy-kiwano{
-  border: 2px solid #4948bb; 
-  border-radius: 10px; 
+.buy-kiwano {
+  border: 2px solid #4948bb;
+  border-radius: 10px;
 }
-.buy-kiwano:hover{
-  border: 2px solid #babb01; 
-  background-color: #ccc ;
+.buy-kiwano:hover {
+  border: 2px solid #babb01;
+  background-color: #ccc;
 }
 .blink {
   animation: blinking 0.6s infinite;
@@ -146,8 +151,9 @@ li {
 @keyframes blinking {
   0% {
     color: #ff3d50;
-  }50% {
-    color: #55d66b;
+  }
+  50% {
+    color: #ffffff;
   }
   100% {
     color: #babb01;
@@ -312,7 +318,7 @@ a.navbar-brand {
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
-  background-color: rgb(252, 126, 231);
+  background-color: #48bb83;
   font-size: 10px;
   margin-bottom: 2px;
 }
@@ -414,7 +420,7 @@ a.navbar-brand {
 .footer-icon:hover {
   color: #babb48;
 }
-.footer-logo{
+.footer-logo {
   width: 100px;
 }
 /* AIRDROP PAGE */
@@ -426,7 +432,7 @@ h1 {
   padding-top: 20px;
   margin-bottom: 20px;
 }
-#airdrop-headers{
+#airdrop-headers {
   background-color: #4948bb;
   padding-bottom: 5px;
   padding-top: 20px;
@@ -477,7 +483,7 @@ h1 {
   padding-top: 0;
 }
 .notice {
-  background-color: #babb01;
+  background-color: #bbbb01a4;
   color: white;
   padding: 30px;
   border-radius: 5px;
@@ -541,46 +547,46 @@ h1 {
 }
 
 /* TOKENS */
-#token{
+#token {
   background-color: white;
   color: white;
   text-transform: uppercase;
 }
-#token .notice{
+#token .notice {
   background-color: #4948bb;
 }
-#token h2{
- color: #4948bb;
-} 
-#token h3{
+#token h2 {
+  color: #4948bb;
+}
+#token h3 {
   color: white;
 }
-#token span{
+#token span {
   color: #babb01;
   font-size: 18px;
 }
-.token-allocation{
+.token-allocation {
   text-align: center;
   padding: 20px;
   margin-bottom: 20px;
   border: 2px solid white;
 }
-.token-allocation:hover{
- border-color: #48bb83;
+.token-allocation:hover {
+  border-color: #48bb83;
 }
 /* PRELOADER */
-#loader{
-  display: flex; 
-  position: fixed; 
+#loader {
+  display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  background: #fff; 
-  text-indent: -9000px; 
-  z-index: 900000; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  text-indent: -9000px;
+  z-index: 900000;
 }
 .lds-hourglass {
   display: inline-block;
@@ -614,7 +620,7 @@ h1 {
   }
 }
 /* WIDGET */
-.widget{
+.widget {
   background-color: #55d66a4b;
   width: 100px;
   height: 100px;
@@ -623,21 +629,21 @@ h1 {
   top: 50%;
   z-index: 899999;
 }
-.widget p{
+.widget p {
   text-align: center;
   padding-top: 40px;
 }
-.widget a{
+.widget a {
   text-decoration: none;
 }
-.red{
+.red {
   color: red;
 }
-.black{
+.black {
   color: black;
 }
 /* AIRDROP DETAILS */
-.my-airdrop-details{
+.my-airdrop-details {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -648,14 +654,15 @@ h1 {
   color: white;
   border-radius: 20px;
 }
-.my-airdrop-details span{
+.my-airdrop-details span {
   color: #babb48;
-
 }
-.mysmall{
+.mysmall {
   font-size: 10px !important;
-  
 }
-.my-airdrop-details span:hover{
+.my-airdrop-details span:hover {
+  color: #48bb83;
+}
+.color-text-2 {
   color: #48bb83;
 }

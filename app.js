@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const compression = require('compression');
+const compression = require("compression");
 const path = require("path");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -10,17 +10,17 @@ const flash = require("connect-flash");
 const Mail = require("./models/mail");
 const Participant = require("./models/participant");
 const Pass = require("./models/pass");
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 
-// DATABASE
-// mongoose
-//   .connect('mongodb+srv://kiwano-project:kiwano360@kiwano-project.ybcdw.mongodb.net/kiwano-project?retryWrites=true&w=majority')
-//   .then(() => {
-//     console.log("Database connected");
-//   })
-//   .catch((err) => {
-//     console.log("Database connection failed. Error: ", err);
-//   });
+// DATABASE 
+mongoose
+  .connect("mongodb+srv://kiwanoproject:kiwanoproject360@cluster0.mrpby.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((err) => {
+    console.log("Database connection failed. Error: ", err);
+  });
 
 // VIEWS ENGINE
 app.set("view engine", "ejs");
@@ -40,17 +40,14 @@ app.use(
 );
 // FLASH MESSAGES
 app.use(flash());
-app.use((req,res,next)=> {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error  = req.flash('error');
-next();
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
+  next();
 });
 // ROUTES
 app.use("/", require("./routes/index"));
-app.get("*", (req, res) => {
-  res.redirect("/");
-});
 app.use("/airdrop", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
@@ -60,4 +57,3 @@ app.get("*", (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log("App Started");
 });
-
