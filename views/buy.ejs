@@ -121,11 +121,11 @@
                             <p class="input-group">
                                 <span class="input-group-text"
                                 >BNB</span>
-                                <input type="number" id="buyAmount" value="0" min="0.1" class="form-control input">
+                                <input type="number" id="buyAmount" placeholder="Minimum Buy: 0.1 BNB" value="0" min="0.1" class="minimumbuy form-control input" onkeypress="minbuy()" onkeyup="minbuy()" onkeydown="minbuy()" onclick="minbuy()">
                             </p>
                             
                             <p>You get: <span id="get">0</span> <span class="tokenSymbol">WANO</span></p>
-                            <p><button id="buyBtn" class="center btn btn-style">Buy Now</button></p>
+                            <p><button id="buyBtn" class="center btn btn-style disabled">Buy Now</button></p>
                             <p>In my wallet: <span id="myTokens"></span> <span class="tokenSymbol">WANO</span></p>
                         </div>
                     </div>

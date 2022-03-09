@@ -65,3 +65,15 @@ copy_button.addEventListener("click", function () {
   temp.remove();
   copy_button.innerHTML = "copied";
 });
+
+function minbuy(){
+  var inputedvalue = document.querySelector(".minimumbuy");
+  var inputedvaluebtn = document.getElementById("buyBtn");
+  if(inputedvalue.value >= 0.1){
+    console.log(parseFloat(inputedvalue.value) + 10); 
+    inputedvaluebtn.classList.remove("disabled");
+    inputedvaluebtn.removeAttribute("disabled");
+  }else{
+    inputedvaluebtn.classList.add("disabled");
+  }
+} 
