@@ -1,6 +1,5 @@
 const express = require("express");
 const Participant = require("../models/participant");
-const oneParticipant = require("../public/js/firstairdrop");
 const router = express.Router();
 
 // ROUTES
@@ -77,7 +76,7 @@ router.post("/", async (req, res) => {
   //   checkTelegramPast != null
   // ) {
   //   req.flash("success_msg", "You Participated In The Previous Airdrop!");
-  //   res.redirect("/airdrop");
+  //   res.redirect("/");
   // } else {
     const checkMail = await Participant.findOne({
       email: req.body.email,
@@ -98,7 +97,7 @@ router.post("/", async (req, res) => {
       checkTelegram != null
     ) {
       req.flash("success_msg", "You Already Participated!");
-      res.redirect("/airdrop");
+      res.redirect("/");
     } else {
       const participant = new Participant({
         email: req.body.email,
@@ -110,10 +109,10 @@ router.post("/", async (req, res) => {
         .save()
         .then(() => {
           req.flash("success_msg", "Details Submitted Successfully!");
-          res.redirect("/airdrop");
+          res.redirect("/");
         })
         .catch((err) => {
-          res.redirect("/airdrop");
+          res.redirect("/");
         });
     }
   // }
@@ -141,7 +140,7 @@ router.get("/:referral", async (req, res) => {
       description,
     });
   } else {
-    res.redirect("/airdrop");
+    res.redirect("/");
   }
 });
 

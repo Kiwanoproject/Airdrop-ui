@@ -1,38 +1,6 @@
-setTimeout(function () {
-  $("#loader").addClass("d-none");
-}, 3000);
-AOS.init();
-// VANTA JS
-VANTA.NET({
-  el: "#hero",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.0,
-  minWidth: 200.0,
-  scale: 1.0,
-  scaleMobile: 1.0,
-  color: 0xffffff,
-  backgroundColor: 0x4948bb,
-  maxDistance: 12.0,
-});
-VANTA.NET({
-  el: "#airdrop-header",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.0,
-  minWidth: 200.0,
-  scale: 1.0,
-  scaleMobile: 1.0,
-  color: 0xffffff,
-  backgroundColor: 0x4948bb,
-  maxDistance: 12.0,
-});
 
 // COUNTDOWN
-var countDownDate = new Date("Apr 8, 2022 00:00:00").getTime();
-
+var countDownDate = new Date("Aug 31, 2022 00:00:00").getTime();
 
 var x = setInterval(function () {
   var now = new Date().getTime();
@@ -65,15 +33,3 @@ copy_button.addEventListener("click", function () {
   temp.remove();
   copy_button.innerHTML = "copied";
 });
-
-function minbuy(){
-  var inputedvalue = document.querySelector(".minimumbuy");
-  var inputedvaluebtn = document.getElementById("buyBtn");
-  if(inputedvalue.value >= 0.1){
-    console.log(parseFloat(inputedvalue.value) + 10); 
-    inputedvaluebtn.classList.remove("disabled");
-    inputedvaluebtn.removeAttribute("disabled");
-  }else{
-    inputedvaluebtn.classList.add("disabled");
-  }
-} 

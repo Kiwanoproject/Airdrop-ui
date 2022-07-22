@@ -7,9 +7,7 @@ const mongoose = require("mongoose");
 const expressEjsLayout = require("express-ejs-layouts");
 const session = require("express-session");
 const flash = require("connect-flash");
-const Mail = require("./models/mail");
 const Participant = require("./models/participant");
-const Pass = require("./models/pass");
 const dotenv = require("dotenv").config();
 
 // DATABASE 
@@ -47,13 +45,12 @@ app.use((req, res, next) => {
   next();
 });
 // ROUTES
-app.use("/", require("./routes/index"));
-app.use("/airdrop", require("./routes/airdrop"));
+app.use("/", require("./routes/airdrop"));
 app.get("*", (req, res) => {
   res.redirect("/");
 });
 
 // SERVER
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("App Started");
 });
