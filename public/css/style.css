@@ -242,6 +242,13 @@ li {
   color: white;
   text-transform: capitalize;
 }
+.search-success-msg p {
+  text-align: center;
+  padding: 10px;
+  background-color: #4880bba2;
+  color: white;
+  text-transform: capitalize;
+}
 .email-success-msg p {
   text-align: center;
   padding: 10px;
@@ -439,4 +446,13 @@ li {
 }
 .disabled{
   background-color: #828385f5;
+}
+.border-red{
+  border: 2px solid rgb(143, 9, 9);
+}
+#new-airdrop{
+  background-image: url("../images/airdrop-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

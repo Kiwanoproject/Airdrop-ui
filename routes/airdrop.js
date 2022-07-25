@@ -15,14 +15,23 @@ router.get("/", async (req, res) => {
     const refNum = "";
     const refLink = "";
     const balance = 0;
-    res.render("airdrop", {
-      refNum,
-      referre,
-      refLink,
-      balance,
-      description,
-      title,
-    });
+    let data = { 
+      message: "Details Not Found!",
+      refNum : refNum,
+      referre: referre,
+      refLink: refLink,
+      balance: balance,
+  };
+    res.json(data);
+
+    // res.render("airdrop", {
+    //   refNum,
+    //   referre,
+    //   refLink,
+    //   balance,
+    //   description,
+    //   title,
+    // });
   } else {
     const refNum = await Participant.find({ referre: ref.referral }).lean();
     if (Object.entries(wallet).length === 0) {
@@ -40,18 +49,27 @@ router.get("/", async (req, res) => {
       });
     } else {
       const detail = await Participant.findOne(wallet).lean();
-      const referre = detail.referral;
+      const referre = detail.referre;
       const refLink = detail.referral;
       const balance = detail.balance;
-      res.render("airdrop", {
-        detail,
-        refNum,
-        referre,
-        refLink,
-        balance,
-        title,
-        description,
-      });
+      let data = { 
+        message: "Details Found!",
+        referre: referre,
+        refLink: refLink,
+        balance: balance,
+        refNum: refNum,
+        referred: refNum.length,
+    };
+      res.json(data);
+      // res.render("airdrop", {
+      //   detail,
+      //   refNum,
+      //   referre,
+      //   refLink,
+      //   balance,
+      //   title,
+      //   description,
+      // });
     }
   }
 });
@@ -78,6 +96,7 @@ router.post("/", async (req, res) => {
   //   req.flash("success_msg", "You Participated In The Previous Airdrop!");
   //   res.redirect("/");
   // } else {
+
     const checkMail = await Participant.findOne({
       email: req.body.email,
     }).lean();
@@ -96,8 +115,9 @@ router.post("/", async (req, res) => {
       checkTwitter != null ||
       checkTelegram != null
     ) {
-      req.flash("success_msg", "You Already Participated!");
-      res.redirect("/");
+      let data = { message : "You Already Participated"};
+      res.json(data);
+    //  res.redirect("/");
     } else {
       const participant = new Participant({
         email: req.body.email,
@@ -108,8 +128,10 @@ router.post("/", async (req, res) => {
       })
         .save()
         .then(() => {
-          req.flash("success_msg", "Details Submitted Successfully!");
-          res.redirect("/");
+          let data = { message : "Details Submitted Successfully!"};
+          res.json(data);
+         // req.flash("success_msg", "Details Submitted Successfully!");
+         // res.redirect("/");
         })
         .catch((err) => {
           res.redirect("/");

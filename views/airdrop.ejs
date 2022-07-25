@@ -1,20 +1,19 @@
-<div class="container pt-5">
-  <div class="row center">
-    <div class="col-6">
-      <img src="1.png" class="img-fluid w-50 pb-3" alt="" />
-      <button class="btn btn-secondary btn-style" href="https://kiwanoswap.io">TRADE WANO TOKEN!</button>
-    </div>
-    <div class="col-6">
-      <img src="2.png" class="img-fluid w-50 pb-3" alt="" />
-      <button class="btn btn-secondary btn-style" href="https://kiwanoproject.com/buy">BUY WANO TOKEN!</button>
-
+<section id="new-airdrop">
+  <div class="container pt-5">
+    <div class="row center">
+      <div class="col-6">
+        <a href="https://kiwanoswap.io"
+          ><img src="/images/1.png" class="img-fluid w-50 pb-3" alt=""
+        /></a>
+      </div>
+      <div class="col-6">
+        <a href="https://kiwanoproject.com"
+          ><img src="/images/2.png" class="img-fluid w-50 pb-3" alt=""
+        /></a>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="airdrop-success-msg mt-4">
-  <%- include ('./partials/messages') %>
-</div>
+</section>
 <section id="how-to-participate">
   <div class="container">
     <h2 class="center">how to participate in the airdrop program</h2>
@@ -42,30 +41,52 @@
             <p id="time" class="center"></p>
 
             <P
-              >Follow us on Twitter:
+            >Follow KiwanoSwap on Twitter:
+            <a href="https://twitter.com/kiwanoswap"
+              >https://twitter.com/kiwanoswap</a
+            ></P
+          >
+
+          <P
+            >Join the KiwanoSwap Telegram group:
+            <a href="https://t.me/kiwanoswapchat"
+              >https://t.me/kiwanoswapchat</a
+            >
+            </P
+          >
+
+          <P
+            >Join the KiwanoSwap Telegram announcement channel:
+            <a href="https://t.me/kiwanoswap"
+              >https://t.me/kiwanoswap</a
+            >
+          </P>
+          
+            <P
+              >Follow Kiwano Project on Twitter:
               <a href="https://twitter.com/projectkiwano"
                 >https://twitter.com/projectkiwano</a
-              ></P
+              >  (<span class="color-text-2">optional</span>)</P
             >
 
             <P
-              >Join the Telegram group:
+              >Join the Kiwano Project Telegram group:
               <a href="https://t.me/the_kiwano_project_group"
                 >https://t.me/the_kiwano_project_group</a
               >
               (<span class="color-text-2">optional</span>)</P
             >
 
-            <P
-              >Join the Telegram announcements channel:
+            <p
+              >Join the Kiwano Project Telegram announcement channel:
               <a href="https://t.me/the_kiwano_project"
                 >https://t.me/the_kiwano_project</a
-              >
-            </P>
+              > (<span class="color-text-2">optional</span>)
+            </p>
 
             <P
-              >Like and RT the Tweet pinned on the twitter profile tagging 2
-              friends using the hashtags #kiwanoairdrop #kiwanocrowdsale</P
+              >Like and RT the Tweet pinned on any of the twitter profiles tagging 2
+              friends using the hashtags #kiwanoswap #crypto #kiwanocrowdsale</P
             >
 
             <p>Submit your details via the participate form.</p>
@@ -86,7 +107,12 @@
       <div class="col-md-8">
         <h2 class="center mt-3">participate</h2>
         <div class="container">
-          <form method="post" action="/">
+          <form
+            method="post"
+            action="/"
+            class="participate-form"
+            id="main-form"
+          >
             <label for="email" class="form-label">Email address</label>
             <div class="input-group mb-3">
               <span class="input-group-text"
@@ -111,7 +137,7 @@
                 type="text"
                 name="wallet"
                 id="wallet"
-                class="form-control input"
+                class="form-control input wallet"
                 placeholder="BSC Address"
                 pattern="0x+[A-F, a-f, 0-9]{40}"
                 required
@@ -157,10 +183,11 @@
                 value="<%= referre %>"
               />
             </div>
-            <button type="submit" class="btn btn-style form-control">
+            <div class="btn btn-style form-control participate-submit">
               Submit
-            </button>
+            </div>
           </form>
+          <div class="airdrop-success-msg mt-4"></div>
         </div>
         <h2 class="center pt-5 pb-2">details</h2>
         <div class="container">
@@ -174,16 +201,20 @@
                 type="text"
                 name="wallet"
                 id="wallet"
-                class="form-control input"
+                class="form-control input wallet-details"
                 placeholder="BSC Address"
                 pattern="0x+[A-F, a-f, 0-9]{40}"
               />
             </div>
 
-            <button type="submit" class="btn btn-style form-control">
+            <button
+              type="submit"
+              class="btn btn-style form-control participant-search"
+            >
               Search
             </button>
           </form>
+          <div class="search-success-msg mt-4"></div>
         </div>
       </div>
       <div class="col-md-2"></div>
@@ -195,7 +226,7 @@
         <div class="col-md-6">
           <P>
             Referral Link:
-            <span id="text_to_copy" class="lowercase"
+            <span id="text_to_copy" class="lowercase the-ref"
               >https://kiwanoproject.com/<%= refLink %></span
             ><span class="copy-button"
               ><button id="copy_button" class="btn btn-copy-style">
@@ -205,11 +236,35 @@
           >
         </div>
         <div class="col-md-3">
-          <p>refered: <%= refNum.length %></p>
+          <p>refered: <span class="referred"><%= refNum.length %></span></p>
         </div>
         <div class="col-md-3">
-          <p>balance: <%= refNum.length * 10 + balance %> WANO</p>
+          <p>
+            balance:
+            <span class="balance"><%= refNum.length * 10 + balance %></span>
+            WANO
+          </p>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-5">
+    <div class="row center">
+      <div class="col-6">
+        <button
+          class="btn btn-secondary btn-style"
+          href="https://kiwanoswap.io"
+        >
+          TRADE WANO TOKEN!
+        </button>
+      </div>
+      <div class="col-6">
+        <button
+          class="btn btn-secondary btn-style"
+          href="https://kiwanoproject.com/buy"
+        >
+          BUY WANO TOKEN!
+        </button>
       </div>
     </div>
   </div>
