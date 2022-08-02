@@ -5,6 +5,25 @@ const router = express.Router();
 // ROUTES
 
 router.get("/", async (req, res) => {
+  const title = "KiwanoSwap - Airdrops";
+  const description =
+    "The KiwanoSwap official airdrop page. The kiwanoSwap airdrop program is live.";
+    const referre = "1";
+    const refNum = "";
+    const refLink = "";
+    const balance = 0;
+  res.render("airdrop", {
+      refNum,
+      referre,
+      refLink,
+      balance,
+      description,
+      title,
+    });
+});
+
+
+router.get("/data", async (req, res) => {
   const title = "The Kiwano Project - Airdrops";
   const description =
     "The Kiwano project official airdrop page. The kiwano airdrop program is live.";
@@ -21,6 +40,7 @@ router.get("/", async (req, res) => {
       referre: referre,
       refLink: refLink,
       balance: balance,
+      referred: 0,
   };
     res.json(data);
 
@@ -39,14 +59,24 @@ router.get("/", async (req, res) => {
       const refNum = "";
       const refLink = "";
       const balance = 0;
-      res.render("airdrop", {
-        refNum,
-        referre,
-        refLink,
-        balance,
-        title,
-        description,
-      });
+
+      let data = { 
+        message: "Details Not Found!",
+        referre: referre,
+        refLink: refLink,
+        balance: balance,
+        refNum: refNum,
+        referred: 0,
+    };
+      res.json(data);
+      // res.render("airdrop", {
+      //   refNum,
+      //   referre,
+      //   refLink,
+      //   balance,
+      //   title,
+      //   description,
+      // });
     } else {
       const detail = await Participant.findOne(wallet).lean();
       const referre = detail.referre;

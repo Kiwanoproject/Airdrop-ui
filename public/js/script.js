@@ -1,5 +1,5 @@
 // COUNTDOWN
-var countDownDate = new Date("Aug 31, 2022 00:00:00").getTime();
+var countDownDate = new Date("Sep 4, 2022 00:00:00").getTime();
 
 var x = setInterval(function () {
   var now = new Date().getTime();
@@ -74,9 +74,12 @@ $(".participate-submit").on("click", function (event) {
 function checkDetails() {
   $(".participant-search").html("Searching...")
   const wallet = $(".wallet-details").val();
+  if(wallet == ""){
+    $(".participant-search").html("Search");
+  }else{
   $.ajax({
     type: "GET",
-    url: "/",
+    url: "/data",
     timeout: 5000,
     data: {
       wallet: wallet
@@ -92,7 +95,7 @@ function checkDetails() {
       $(".balance").html("" + theBalance + "");
     },
   });
-}
+}}
 
 $(".participant-search").on("click", function (event) {
   event.preventDefault();
