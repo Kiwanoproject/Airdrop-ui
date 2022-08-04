@@ -89,7 +89,7 @@ function checkDetails() {
       $(".participant-search").html("Search")
       $(".search-success-msg").html("<p>" + data.message + "</p>");
       let link = 
-      $(".the-ref").html( `https://kiwanoproject.com/${data.refLink}`);
+      $(".the-ref").html( `https://airdrop.kiwanoswap.io/${data.refLink}`);
       $(".referred").html(data.referred);
       let theBalance = data.referred * 10 + data.balance;
       $(".balance").html("" + theBalance + "");
