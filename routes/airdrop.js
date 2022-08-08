@@ -1,5 +1,7 @@
 const express = require("express");
 const Participant = require("../models/participant");
+const Recaptcha = require('express-recaptcha').RecaptchaV3
+const recaptcha = new Recaptcha(process.env.SITE_KEY, process.env.SECRET_KEY)
 const router = express.Router();
 
 // ROUTES
@@ -103,7 +105,7 @@ router.get("/data", async (req, res) => {
     }
   }
 });
-router.post("/", async (req, res) => {
+router.post("/", recaptcha.middleware.verify, async (req, res) => {
   // const checkMailPast = await oneParticipant.find(
   //   (email) => req.body.email == email.email
   // );
@@ -127,6 +129,11 @@ router.post("/", async (req, res) => {
   //   res.redirect("/");
   // } else {
 
+    if (!req.recaptcha.error) {
+      let data = { message : "You Can Not Participate"};
+      res.json(data);
+    }
+    else{
     const checkMail = await Participant.findOne({
       email: req.body.email,
     }).lean();
@@ -167,6 +174,7 @@ router.post("/", async (req, res) => {
           res.redirect("/");
         });
     }
+  }
   // }
 });
 

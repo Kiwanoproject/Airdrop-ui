@@ -6,11 +6,15 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const expressEjsLayout = require("express-ejs-layouts");
 const session = require("express-session");
+const ipfilter = require("express-ipfilter").IpFilter
 const flash = require("connect-flash");
+const Recaptcha = require('express-recaptcha').RecaptchaV3
 const Participant = require("./models/participant");
 const dotenv = require("dotenv").config();
-
+const ips = ["42.0.30.210"];
+const recaptcha = new Recaptcha(process.env.SITE_KEY, process.env.SECRET_KEY);
 // DATABASE 
+
 mongoose
   .connect(process.env.MONGOURL)
   .then(() => {
@@ -27,6 +31,8 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use(expressEjsLayout);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(ipfilter(ips));
+
 
 // SESSION
 app.use(
